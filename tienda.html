@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Tienda - Golden Cloud Pod</title>
+
+  <!-- SEO y Open Graph Meta Etiquetas -->
+  <meta name="description" content="Catálogo Golden Cloud Pod - Explora todos nuestros modelos y elige tu sabor perfecto." />
+  <meta property="og:title" content="Catálogo - Golden Cloud Pod" />
+  <meta property="og:description" content="Explora todos nuestros modelos y elige tu sabor perfecto para una experiencia inolvidable. ¡Contáctanos por WhatsApp!" />
+  <meta property="og:image" content="images/vape_pack_promo_1773698305641.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- CDN de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Fuentes de Google -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Banner Superior -->
+  <div
+    class="bg-black text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase border-b border-gray-800">
+    ADVERTENCIA: Este producto contiene nicotina. La nicotina es una sustancia química adictiva.
+  </div>
+
+  <!-- Navegación -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-gray-100 bg-white">
+    <nav class="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+      <!-- Logotipo -->
+      <div class="flex-shrink-0 cursor-pointer" onclick="window.location.href='index.html'">
+        <span class="text-2xl font-black tracking-tighter italic">Golden Cloud Pod</span>
+      </div>
+
+      <!-- Menú de Escritorio -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
+        <a href="index.html" class="hover:text-gray-500 transition-colors cursor-pointer">Inicio</a>
+        <a href="tienda.html" class="text-black transition-colors cursor-pointer">Tienda</a>
+        <a class="hover:text-gray-500 transition-colors cursor-pointer"
+          onclick="showNotification('Busca tu tienda local en la página interactiva que lanzaremos pronto.')">Dónde Comprar</a>
+        <a class="hover:text-gray-500 transition-colors cursor-pointer"
+          onclick="showNotification('El portal mayorista estará disponible próximamente.')">Venta al por mayor</a>
+      </div>
+
+      <!-- Iconos -->
+      <div class="flex items-center space-x-5">
+        <div class="hidden sm:block relative">
+          <input
+            class="bg-gray-100 border-none rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-black w-32 md:w-48"
+            placeholder="Buscar" type="text" onkeydown="handleSearch(event)" />
+          <svg class="w-4 h-4 absolute right-3 top-2 text-gray-400" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Banner de Tienda -->
+  <div class="bg-[#1a1a1a] text-white py-16 md:py-24 text-center">
+    <h1 class="text-5xl md:text-7xl font-black italic tracking-widest uppercase text-lime-400">CATÁLOGO COMPLETO</h1>
+    <p class="mt-4 text-gray-300 font-bold uppercase tracking-wider max-w-2xl mx-auto px-4">Explora todos nuestros modelos y elige tu sabor perfecto para una experiencia inolvidable.</p>
+  </div>
+
+  <!-- Layout Principal de Tienda -->
+  <section class="py-12 bg-white min-h-screen">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row gap-8">
+      
+      <!-- Lateral de Categorías -->
+      <aside class="w-full md:w-1/4 lg:w-1/5 shrink-0">
+        <div class="sticky top-24 bg-gray-50 p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h2 class="font-black text-2xl uppercase tracking-widest mb-6 border-b-2 border-black pb-2">Familia</h2>
+          <ul class="space-y-4 font-bold text-gray-500 uppercase tracking-wider text-sm flex flex-col items-start" id="category-list">
+            <li><button onclick="filterCategory('Todos')" class="hover:text-black transition-colors w-full text-left cat-btn active-cat text-black">Todos (Vista Previa)</button></li>
+            <li><button onclick="filterCategory('V150')" class="hover:text-black transition-colors w-full text-left cat-btn">V150 Pro</button></li>
+            <li><button onclick="filterCategory('V80')" class="hover:text-black transition-colors w-full text-left cat-btn">V80</button></li>
+            <li><button onclick="filterCategory('V50')" class="hover:text-black transition-colors w-full text-left cat-btn">V50</button></li>
+            <li><button onclick="filterCategory('V35')" class="hover:text-black transition-colors w-full text-left cat-btn">V35</button></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Contenedor de Productos -->
+      <main class="w-full md:w-3/4 lg:w-4/5">
+        <!-- Cuadrícula Completa de 4 en vez de 6 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="product-grid">
+          
+          <!-- V150 -->
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V150" onclick="openProductModal('V150 Pro', 'Berry Blast', 'images/V150/V150-FLAVOURSBERRY-BLAST_5000x.png', 'V150')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V150 Berry Blast" class="h-64 object-contain drop-shadow-md" src="images/V150/V150-FLAVOURSBERRY-BLAST_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V150 Pro</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Berry Blast</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V150" onclick="openProductModal('V150 Pro', 'Green Apple', 'images/V150/V150-FLAVOURSGREEN-APPLE_5000x.png', 'V150')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V150 Green Apple" class="h-64 object-contain drop-shadow-md" src="images/V150/V150-FLAVOURSGREEN-APPLE_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V150 Pro</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Green Apple</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V150" onclick="openProductModal('V150 Pro', 'Icy Mint', 'images/V150/V150-FLAVOURSICY-MINT_5000x.webp', 'V150')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V150 Icy Mint" class="h-64 object-contain drop-shadow-md" src="images/V150/V150-FLAVOURSICY-MINT_5000x.webp" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V150 Pro</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Icy Mint</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V150" onclick="openProductModal('V150 Pro', 'Menthol', 'images/V150/V150-FLAVOURSMENTHOL_5000x.png', 'V150')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V150 Menthol" class="h-64 object-contain drop-shadow-md" src="images/V150/V150-FLAVOURSMENTHOL_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V150 Pro</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Menthol</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V150" onclick="openProductModal('V150 Pro', 'Pineapple Ice', 'images/V150/V150-FLAVOURSPINEAPPLE-ICE_5000x.png', 'V150')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V150 Pineapple Ice" class="h-64 object-contain drop-shadow-md" src="images/V150/V150-FLAVOURSPINEAPPLE-ICE_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V150 Pro</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Pineapple Ice</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V150" onclick="openProductModal('V150 Pro', 'Watermelon Ice', 'images/V150/V150-FLAVOURSWATERMELON-ICE_508a585e-dd37-4c39-a2eb-050489e2054a_5000x.png', 'V150')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V150 Watermelon Ice" class="h-64 object-contain drop-shadow-md" src="images/V150/V150-FLAVOURSWATERMELON-ICE_508a585e-dd37-4c39-a2eb-050489e2054a_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V150 Pro</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Watermelon Ice</span>
+          </div>
+          
+          <!-- V80 -->
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Banana Cherry', 'images/V80/Banana_Cherry_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Banana Cherry" class="h-64 object-contain drop-shadow-md" src="images/V80/Banana_Cherry_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Banana Cherry</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Banana Ice', 'images/V80/Banana_Ice_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Banana Ice" class="h-64 object-contain drop-shadow-md" src="images/V80/Banana_Ice_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Banana Ice</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Blueberry Lemon', 'images/V80/Blueberry_Lemon_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Blueberry Lemon" class="h-64 object-contain drop-shadow-md" src="images/V80/Blueberry_Lemon_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Blueberry Lemon</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Cactus', 'images/V80/Cactus_5000x.webp', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Cactus" class="h-64 object-contain drop-shadow-md" src="images/V80/Cactus_5000x.webp" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Cactus</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Grape Ice', 'images/V80/Grape_Ice_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Grape Ice" class="h-64 object-contain drop-shadow-md" src="images/V80/Grape_Ice_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Grape Ice</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Grapefruit Mint', 'images/V80/Grapefruit_Mint_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Grapefruit Mint" class="h-64 object-contain drop-shadow-md" src="images/V80/Grapefruit_Mint_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Grapefruit Mint</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Green Apple', 'images/V80/Green_Apple_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Green Apple" class="h-64 object-contain drop-shadow-md" src="images/V80/Green_Apple_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Green Apple</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Icy Mint', 'images/V80/Icy_Mint_5000x.webp', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Icy Mint" class="h-64 object-contain drop-shadow-md" src="images/V80/Icy_Mint_5000x.webp" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Icy Mint</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Menthol', 'images/V80/Menthol_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Menthol" class="h-64 object-contain drop-shadow-md" src="images/V80/Menthol_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Menthol</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Passion Fruit Sour Kiwi', 'images/V80/Passion_Fruit_Sour_Kiwi_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Passion Fruit Sour Kiwi" class="h-64 object-contain drop-shadow-md" src="images/V80/Passion_Fruit_Sour_Kiwi_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Passion Fr/Kiwi</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Strawberry Ice', 'images/V80/Strawberry_Ice_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Strawberry Ice" class="h-64 object-contain drop-shadow-md" src="images/V80/Strawberry_Ice_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Strawberry Ice</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Strawberry Kiwi', 'images/V80/Strawberry_Kiwi_5000x.webp', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Strawberry Kiwi" class="h-64 object-contain drop-shadow-md" src="images/V80/Strawberry_Kiwi_5000x.webp" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Strawberry Kiwi</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V80" onclick="openProductModal('V80', 'Watermelon Ice', 'images/V80/Watermelon_ICE_5000x.png', 'V80')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V80 Watermelon Ice" class="h-64 object-contain drop-shadow-md" src="images/V80/Watermelon_ICE_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V80</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Watermelon Ice</span>
+          </div>
+          
+          <!-- V50 -->
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Aloe Grape', 'images/V50/v50-singlesALOE-GRAPE_5000x.png', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Aloe Grape" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesALOE-GRAPE_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Aloe Grape</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Banana Ice', 'images/V50/v50-singlesBANANA-ICE_5000x.png', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Banana Ice" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesBANANA-ICE_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Banana Ice</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Blue Raspberry Ice', 'images/V50/v50-singlesBLUE-RASPBERRY-ICE_5000x.webp', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Blue Raspberry Ice" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesBLUE-RASPBERRY-ICE_5000x.webp" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Blue Rasp Ice</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Blueberry Ice', 'images/V50/v50-singlesBLUEBERRY-ICE_5000x.png', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Blueberry Ice" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesBLUEBERRY-ICE_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Blueberry Ice</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Green Apple', 'images/V50/v50-singlesGREEN-APPLE_5000x.png', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Green Apple" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesGREEN-APPLE_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Green Apple</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Ice Mint', 'images/V50/v50-singlesICE-MINT_5000x.png', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Ice Mint" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesICE-MINT_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Ice Mint</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Peach Raspberry', 'images/V50/v50-singlesPEACH-RASPBERRY_5000x.png', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Peach Raspberry" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesPEACH-RASPBERRY_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Peach Raspberry</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Strawberry Banana', 'images/V50/v50-singlesSTRAWBERRY-BANANA_5000x.png', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Strawberry Banana" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesSTRAWBERRY-BANANA_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Strawberry Banana</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Strawberry Mango', 'images/V50/v50-singlesSTRAWBERRY-MANGO_5000x.webp', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Strawberry Mango" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesSTRAWBERRY-MANGO_5000x.webp" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Strawberry Mango</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V50" onclick="openProductModal('V50', 'Watermelon Ice', 'images/V50/v50-singlesWATERMELON-ICE_d53a309c-58d2-4f68-bd34-ecb69dadbba6_5000x.png', 'V50')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V50 Watermelon Ice" class="h-64 object-contain drop-shadow-md" src="images/V50/v50-singlesWATERMELON-ICE_d53a309c-58d2-4f68-bd34-ecb69dadbba6_5000x.png" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V50</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Watermelon Ice</span>
+          </div>
+          
+          <!-- V35 -->
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V35" onclick="openProductModal('V35', 'Blue Rasp Ice', 'images/V35/V35-single-box_device-BlueRaspIce_5000x.jpg', 'V35')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V35 Blue Rasp Ice" class="h-64 object-contain drop-shadow-md" src="images/V35/V35-single-box_device-BlueRaspIce_5000x.jpg" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V35</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Blue Rasp Ice</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V35" onclick="openProductModal('V35', 'Mango Peach', 'images/V35/V35-single-box_device-MangoPeach_5000x.jpg', 'V35')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V35 Mango Peach" class="h-64 object-contain drop-shadow-md" src="images/V35/V35-single-box_device-MangoPeach_5000x.jpg" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V35</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Mango Peach</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V35" onclick="openProductModal('V35', 'Raspberry Lemonade', 'images/V35/V35-single-box_device-RaspberryLemonade_5000x.jpg', 'V35')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V35 Raspberry Lemonade" class="h-64 object-contain drop-shadow-md" src="images/V35/V35-single-box_device-RaspberryLemonade_5000x.jpg" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V35</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Raspberry Lem.</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V35" onclick="openProductModal('V35', 'Strawberry Apple Watermelon', 'images/V35/V35-single-box_device-StrawberryAppleWatermelon_5000x.jpg', 'V35')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V35 Strawberry Apple Watermelon" class="h-64 object-contain drop-shadow-md" src="images/V35/V35-single-box_device-StrawberryAppleWatermelon_5000x.jpg" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V35</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Strawb Apple Wat</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer border border-transparent hover:border-gray-200 p-4 rounded-xl transition-all duration-300 transform hover:-translate-y-2 product-item" data-category="V35" onclick="openProductModal('V35', 'Strawberry Kiwi', 'images/V35/V35-single-box_device-StrawberryKiwi_5000x.webp', 'V35')">
+            <div class="mb-6 w-full flex justify-center bg-gray-50 rounded-lg p-4 group-hover:bg-gray-100 transition-colors"><img alt="V35 Strawberry Kiwi" class="h-64 object-contain drop-shadow-md" src="images/V35/V35-single-box_device-StrawberryKiwi_5000x.webp" /></div><span class="font-black text-xl uppercase bg-gray-100 px-3 py-1 rounded w-full text-center">V35</span><span class="text-md font-bold text-gray-500 mt-2 text-center">Strawberry Kiwi</span>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- Pie de Página -->
+  <footer id="site-footer" class="bg-white pt-20 pb-8 border-t border-gray-100 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="col-span-1">
+          <div class="text-3xl font-black italic mb-6">Golden Cloud Pod</div>
+          <p class="text-sm font-bold mb-4 uppercase">GOLDEN CLOUD POD S.A.</p>
+          <address class="text-xs text-gray-500 not-italic space-y-1">
+            Km 8 Acaray<br />
+            Ciudad del Este, Paraguay<br />
+          </address>
+        </div>
+
+        <div>
+          <h4 class="font-black mb-6 uppercase tracking-widest border-b border-black pb-2 inline-block">VAPEADOR</h4>
+          <ul class="text-xs font-bold uppercase space-y-3">
+            <li><a class="hover:underline cursor-pointer" onclick="window.location.href='tienda.html'">PLUMAS VAPE</a></li>
+            <li><a class="hover:underline cursor-pointer" onclick="window.location.href='tienda.html'">PAQUETES VAPE</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-black mb-6 uppercase tracking-widest border-b border-black pb-2 inline-block">SERVICIO AL CLIENTE</h4>
+          <ul class="text-xs font-bold uppercase space-y-3">
+            <li><a class="hover:underline cursor-pointer">ENVÍOS Y DEVOLUCIONES</a></li>
+            <li><a class="hover:underline cursor-pointer">POLÍTICA DE PRIVACIDAD</a></li>
+            <li><a class="hover:underline cursor-pointer">TÉRMINOS Y CONDICIONES</a></li>
+            <li><a class="hover:underline cursor-pointer">CONTÁCTENOS</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex space-x-6 mb-8">
+            <a class="text-black hover:text-gray-500 transition-colors cursor-pointer" aria-label="Facebook">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+              </svg>
+            </a>
+            <a class="text-black hover:text-gray-500 transition-colors cursor-pointer" aria-label="X (Twitter)">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path>
+              </svg>
+            </a>
+            <a class="text-black hover:text-gray-500 transition-colors cursor-pointer" aria-label="Instagram">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold italic">18+</div>
+            <span class="text-xs font-bold uppercase">Solo Adultos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-100 pt-8 text-[10px] text-gray-400 leading-relaxed text-center px-4">
+        ADVERTENCIA: Los cigarrillos electrónicos y los productos de e-líquido pueden contener nicotina. Estos productos no son productos para dejar de fumar y no han sido probados como tales. Mantener fuera del alcance de niños y mascotas.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Producto -->
+  <div id="product-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-4xl w-full mx-4 flex flex-col md:flex-row overflow-hidden relative transform scale-95 transition-transform duration-300" id="product-modal-content">
+      
+      <!-- Botón de Cerrar Modal -->
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 z-20 bg-gray-100 hover:bg-gray-200 rounded-full p-2 transition-colors">
+        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Panel Izquierdo: Imagen -->
+      <div class="w-full md:w-1/2 bg-gray-50 p-10 flex items-center justify-center relative border-b md:border-b-0 md:border-r border-gray-100">
+        <div class="absolute top-6 left-6 z-10">
+          <span id="modal-badge" class="bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"></span>
+        </div>
+        <img id="modal-img" src="" alt="Producto" class="max-h-[50vh] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+      </div>
+
+      <!-- Panel Derecho: Detalles -->
+      <div class="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+        <h2 id="modal-title" class="text-4xl md:text-5xl font-black italic uppercase tracking-wider mb-2 text-black"></h2>
+        <h3 id="modal-flavor" class="text-xl md:text-2xl font-bold text-gray-500 mb-8 uppercase"></h3>
+        
+        <div class="space-y-4 mb-10">
+          <div class="flex items-start gap-4">
+             <div class="bg-lime-100 p-2 rounded-full flex-shrink-0">
+               <svg class="w-5 h-5 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+             </div>
+             <div>
+               <h4 class="font-bold text-sm uppercase text-gray-900">Rendimiento Extremo</h4>
+               <p class="font-medium text-sm text-gray-600">Sabor intenso y duradero desde la primera inhalación.</p>
+             </div>
+          </div>
+          <div class="flex items-start gap-4">
+             <div class="bg-lime-100 p-2 rounded-full flex-shrink-0">
+               <svg class="w-5 h-5 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+             </div>
+             <div>
+               <h4 class="font-bold text-sm uppercase text-gray-900">Diseño Premium</h4>
+               <p class="font-medium text-sm text-gray-600">Acabado sofisticado, ergonómico y resistente para el día a día.</p>
+             </div>
+          </div>
+        </div>
+
+        <button id="modal-whatsapp-btn" class="bg-[#25D366] hover:bg-[#128C7E] text-white font-black px-8 py-4 rounded-full text-sm md:text-md transition-transform hover:scale-105 shadow-xl uppercase tracking-widest flex justify-center items-center gap-3 w-full">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar por Stock
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de Notificaciones -->
+  <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2"></div>
+
+  <!-- Lógica de scripts para interactividad -->
+  <script src="scripts.js"></script>
+</body>
+</html>
