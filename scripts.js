@@ -44,8 +44,19 @@ function handleContact(e) {
 
 function handleSearch(e) {
   if (e.key === 'Enter' && e.target.value.trim() !== '') {
-    showNotification(`Buscando: "${e.target.value}"...`);
-    e.target.value = '';
+    const query = encodeURIComponent(e.target.value.trim());
+    window.location.href = `busqueda.html?q=${query}`;
+  }
+}
+
+function triggerSearch() {
+  // Find the search input that is closest to the clicked icon
+  const searchInput = document.querySelector('input[placeholder="Buscar"]');
+  if (searchInput && searchInput.value.trim() !== '') {
+    const query = encodeURIComponent(searchInput.value.trim());
+    window.location.href = `busqueda.html?q=${query}`;
+  } else {
+    showNotification('Escribe algo para buscar.');
   }
 }
 
