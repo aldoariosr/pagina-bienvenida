@@ -8,6 +8,25 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = 'hidden'; // Evitar desplazamiento de la página
     }
   }
+
+  // Inicializar SwiperJS
+  if (document.querySelector('.hero-swiper')) {
+    new Swiper('.hero-swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 24, // Equivale al gap-6 de Tailwind (1.5rem = 24px)
+      loop: true,
+      speed: 1000, // Transición suave y lenta (1 segundo)
+      autoplay: {
+        delay: 2500, // Tiempo que se muestra cada producto (2.5 segundos)
+        pauseOnMouseEnter: true, // Detiene el autoplay al pasar el mouse
+        disableOnInteraction: false, // Continúa el autoplay después de interacción manual
+      },
+      navigation: {
+        nextEl: '.hero-next',
+        prevEl: '.hero-prev',
+      },
+    });
+  }
 });
 
 function confirmAge(isAdult) {
@@ -112,7 +131,7 @@ function filterCategory(category) {
   });
 
   const products = document.querySelectorAll('.product-item');
-  
+
   if (category === 'Todos') {
     // Show only 1 from each category (Preview effect)
     let seen = { V150: false, V80: false, V50: false, V35: false };
@@ -140,46 +159,46 @@ function filterCategory(category) {
 
 // Initial filter applied when page loads (if product-grid exists)
 document.addEventListener("DOMContentLoaded", () => {
-   if (document.getElementById('product-grid')) {
-      filterCategory('Todos');
-   }
+  if (document.getElementById('product-grid')) {
+    filterCategory('Todos');
+  }
 });
 
 // Modal Logic
 function openProductModal(title, flavor, imgSrc, category) {
   const modal = document.getElementById('product-modal');
   const modalContent = document.getElementById('product-modal-content');
-  
+
   document.getElementById('modal-title').innerText = title;
   document.getElementById('modal-flavor').innerText = flavor;
   document.getElementById('modal-badge').innerText = category;
   document.getElementById('modal-img').src = imgSrc;
-  
+
   const wpText = encodeURIComponent(`Hola, quisiera consultar características o stock sobre el Device: ${title} con sabor: ${flavor}`);
   const wpLink = `https://wa.me/595973731548?text=${wpText}`;
   document.getElementById('modal-whatsapp-btn').onclick = () => window.open(wpLink, '_blank');
-  
+
   modal.classList.remove('hidden');
   // Trick for smooth fade in
   setTimeout(() => {
     modal.classList.remove('opacity-0');
     modalContent.classList.remove('scale-95');
   }, 10);
-  
+
   document.body.style.overflow = 'hidden';
 }
 
 function closeProductModal() {
   const modal = document.getElementById('product-modal');
   const modalContent = document.getElementById('product-modal-content');
-  
+
   modal.classList.add('opacity-0');
   modalContent.classList.add('scale-95');
-  
+
   setTimeout(() => {
     modal.classList.add('hidden');
   }, 300); // Wait for transition
-  
+
   // if not verified age modal is also there, check before setting auto
   if (sessionStorage.getItem('ageVerified')) {
     document.body.style.overflow = 'auto';

@@ -25,6 +25,8 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap"
     rel="stylesheet" />
 
+  <!-- SwiperJS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -75,21 +77,24 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-full shadow-2xl z-50 transition-all duration-300">
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-full shadow-2xl z-50 transition-all duration-300">
       <div class="flex flex-col px-6 py-6 space-y-6 text-sm font-black uppercase tracking-widest text-center">
         <a href="index.html" class="hover:text-gray-500 py-2 border-b border-gray-50">Inicio</a>
         <a href="tienda.html" class="hover:text-gray-500 py-2 border-b border-gray-50">Tienda</a>
         <a href="donde-comprar.html" class="hover:text-gray-500 py-2 border-b border-gray-50">Dónde Comprar</a>
         <a href="mayorista.html" class="hover:text-gray-500 py-2 border-b border-gray-50">Mayorista</a>
         <a href="nosotros.html" class="hover:text-gray-500 py-2">Nosotros</a>
-        
+
         <div class="pt-6 relative mt-2">
           <input id="search-input-mobile"
             class="bg-gray-100 border-none rounded-full px-6 py-3 text-sm focus:ring-1 focus:ring-black w-full"
-            placeholder="Buscar producto..." type="text" onkeydown="if(event.key === 'Enter') { window.location.href = 'busqueda.html?q=' + encodeURIComponent(this.value); }" />
-          <svg onclick="window.location.href = 'busqueda.html?q=' + encodeURIComponent(document.getElementById('search-input-mobile').value)"
-            class="w-5 h-5 absolute right-4 top-9 text-gray-400 cursor-pointer hover:text-black"
-            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            placeholder="Buscar producto..." type="text"
+            onkeydown="if(event.key === 'Enter') { window.location.href = 'busqueda.html?q=' + encodeURIComponent(this.value); }" />
+          <svg
+            onclick="window.location.href = 'busqueda.html?q=' + encodeURIComponent(document.getElementById('search-input-mobile').value)"
+            class="w-5 h-5 absolute right-4 top-9 text-gray-400 cursor-pointer hover:text-black" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
@@ -106,13 +111,12 @@
       </div>
 
       <!-- Contenedor del Carousel de Productos Edge-to-Edge -->
-      <div class="relative w-full group overflow-hidden">
-        <div id="hero-carousel"
-          class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 scroll-smooth hide-scrollbar px-4 lg:px-[2vw]">
+      <div class="swiper hero-swiper relative w-full group overflow-hidden px-4 lg:px-[2vw]">
+        <div id="hero-carousel" class="swiper-wrapper pb-8 pt-4">
 
           <!-- Banner 1 -->
           <div
-            class="snap-center shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-2xl relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-300 shadow-xl flex flex-col items-center justify-center p-8 min-h-[400px]">
+            class="swiper-slide w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-2xl relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-300 shadow-xl flex flex-col items-center justify-center p-8 min-h-[400px] h-auto">
             <h3
               class="text-black font-black text-4xl md:text-6xl italic absolute top-0 w-full text-center tracking-widest pointer-events-none opacity-10">
               V150 PRO</h3>
@@ -137,7 +141,7 @@
 
           <!-- Banner 2 -->
           <div
-            class="snap-center shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-2xl relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-300 shadow-xl flex flex-col items-center justify-center p-8 min-h-[400px]">
+            class="swiper-slide w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-2xl relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-300 shadow-xl flex flex-col items-center justify-center p-8 min-h-[400px] h-auto">
             <h3
               class="text-black font-black text-4xl md:text-6xl italic absolute top-0 w-full text-center tracking-widest pointer-events-none opacity-10">
               V80</h3>
@@ -161,7 +165,7 @@
 
           <!-- Banner 3 -->
           <div
-            class="snap-center shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-2xl relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-300 shadow-xl flex flex-col items-center justify-center p-8 min-h-[400px]">
+            class="swiper-slide w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-2xl relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-300 shadow-xl flex flex-col items-center justify-center p-8 min-h-[400px] h-auto">
             <h3
               class="text-black font-black text-4xl md:text-6xl italic absolute top-0 w-full text-center tracking-widest pointer-events-none opacity-10">
               V150 ICE</h3>
@@ -185,7 +189,7 @@
 
           <!-- Banner 4 -->
           <div
-            class="snap-center shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-2xl relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-300 shadow-xl flex flex-col items-center justify-center p-8 min-h-[400px]">
+            class="swiper-slide w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-2xl relative rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-300 shadow-xl flex flex-col items-center justify-center p-8 min-h-[400px] h-auto">
             <h3
               class="text-black font-black text-4xl md:text-6xl italic absolute top-0 w-full text-center tracking-widest pointer-events-none opacity-10">
               MÚLTIPLE</h3>
@@ -210,14 +214,14 @@
         </div>
 
         <!-- Flechas del Carrusel (Ajustadas a los extremos) -->
-        <button onclick="document.getElementById('hero-carousel').scrollBy({left: -400, behavior: 'smooth'})"
-          class="absolute left-2 md:left-6 top-1/2 transform -translate-y-1/2 bg-white/90 p-4 rounded-full shadow-2xl hover:bg-white text-black z-30 transition-transform hover:scale-110 hidden md:flex items-center justify-center">
+        <button
+          class="hero-prev absolute left-2 md:left-6 top-1/2 transform -translate-y-1/2 bg-white/90 p-4 rounded-full shadow-2xl hover:bg-white text-black z-30 transition-transform hover:scale-110 hidden md:flex items-center justify-center cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
           </svg>
         </button>
-        <button onclick="document.getElementById('hero-carousel').scrollBy({left: 400, behavior: 'smooth'})"
-          class="absolute right-2 md:right-6 top-1/2 transform -translate-y-1/2 bg-white/90 p-4 rounded-full shadow-2xl hover:bg-white text-black z-30 transition-transform hover:scale-110 hidden md:flex items-center justify-center">
+        <button
+          class="hero-next absolute right-2 md:right-6 top-1/2 transform -translate-y-1/2 bg-white/90 p-4 rounded-full shadow-2xl hover:bg-white text-black z-30 transition-transform hover:scale-110 hidden md:flex items-center justify-center cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
           </svg>
@@ -455,6 +459,8 @@
     </div>
   </div>
 
+  <!-- SwiperJS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- Lógica de scripts para interactividad -->
   <script src="scripts.js"></script>
 </body>
