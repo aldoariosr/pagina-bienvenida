@@ -237,3 +237,39 @@ function toggleMobileMenu() {
     menu.classList.toggle('hidden');
   }
 }
+
+// ============================================
+// LÓGICA DEL GIF SOLO ADULTOS
+// ============================================
+function openGifModal() {
+  const modal = document.getElementById('gif-modal');
+  const modalContent = document.getElementById('gif-modal-content');
+  if (!modal) return;
+  
+  modal.classList.remove('hidden');
+  
+  // Animación suave de entrada
+  setTimeout(() => {
+    modal.classList.remove('opacity-0');
+    if (modalContent) modalContent.classList.remove('scale-95');
+  }, 10);
+  
+  document.body.style.overflow = 'hidden';
+}
+
+function closeGifModal() {
+  const modal = document.getElementById('gif-modal');
+  const modalContent = document.getElementById('gif-modal-content');
+  if (!modal) return;
+  
+  modal.classList.add('opacity-0');
+  if (modalContent) modalContent.classList.add('scale-95');
+  
+  setTimeout(() => {
+    modal.classList.add('hidden');
+  }, 300); // Esperar a que termine la transición
+  
+  if (sessionStorage.getItem('ageVerified')) {
+    document.body.style.overflow = 'auto';
+  }
+}
