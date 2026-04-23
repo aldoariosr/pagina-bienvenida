@@ -211,3 +211,10 @@ function handleWholesaleForm(e) {
   showNotification('¡Solicitud mayorista enviada! Nuestro equipo comercial te contactará en las próximas 24 horas.');
   e.target.reset();
 }
+
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  if (menu) {
+    menu.classList.toggle('hidden');
+  }
+}

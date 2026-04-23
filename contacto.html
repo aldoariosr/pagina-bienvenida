@@ -45,7 +45,36 @@
           </svg>
         </div>
       </div>
+      <!-- Hamburger Button -->
+      <button onclick="toggleMobileMenu()" class="md:hidden text-black hover:text-gray-600 focus:outline-none ml-4">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-full shadow-2xl z-50 transition-all duration-300">
+      <div class="flex flex-col px-6 py-6 space-y-6 text-sm font-black uppercase tracking-widest text-center">
+        <a href="index.html" class="hover:text-gray-500 py-2 border-b border-gray-50">Inicio</a>
+        <a href="tienda.html" class="hover:text-gray-500 py-2 border-b border-gray-50">Tienda</a>
+        <a href="donde-comprar.html" class="hover:text-gray-500 py-2 border-b border-gray-50">Dónde Comprar</a>
+        <a href="mayorista.html" class="hover:text-gray-500 py-2 border-b border-gray-50">Mayorista</a>
+        <a href="nosotros.html" class="hover:text-gray-500 py-2">Nosotros</a>
+        
+        <div class="pt-6 relative mt-2">
+          <input id="search-input-mobile"
+            class="bg-gray-100 border-none rounded-full px-6 py-3 text-sm focus:ring-1 focus:ring-black w-full"
+            placeholder="Buscar producto..." type="text" onkeydown="if(event.key === 'Enter') { window.location.href = 'busqueda.html?q=' + encodeURIComponent(this.value); }" />
+          <svg onclick="window.location.href = 'busqueda.html?q=' + encodeURIComponent(document.getElementById('search-input-mobile').value)"
+            class="w-5 h-5 absolute right-4 top-9 text-gray-400 cursor-pointer hover:text-black"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
   </header>
 
   <div class="bg-[#1a1a1a] text-white py-16 md:py-24 text-center">
