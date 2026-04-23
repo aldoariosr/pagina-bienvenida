@@ -28,7 +28,7 @@ function confirmAge(isAdult) {
 
 function contactWhatsApp(productName) {
   const text = encodeURIComponent(`Hola, quisiera consultar características o stock sobre el producto: ${productName}`);
-  const link = `https://wa.me/?text=${text}`;
+  const link = `https://wa.me/595973731548?text=${text}`;
   window.open(link, '_blank');
 }
 
@@ -156,7 +156,7 @@ function openProductModal(title, flavor, imgSrc, category) {
   document.getElementById('modal-img').src = imgSrc;
   
   const wpText = encodeURIComponent(`Hola, quisiera consultar características o stock sobre el Device: ${title} con sabor: ${flavor}`);
-  const wpLink = `https://wa.me/?text=${wpText}`;
+  const wpLink = `https://wa.me/595973731548?text=${wpText}`;
   document.getElementById('modal-whatsapp-btn').onclick = () => window.open(wpLink, '_blank');
   
   modal.classList.remove('hidden');

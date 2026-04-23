@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -8,11 +9,15 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
-  <div class="bg-black text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase border-b border-gray-800">
+  <div
+    class="bg-black text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase border-b border-gray-800">
     ADVERTENCIA: Este producto contiene nicotina. La nicotina es una sustancia química adictiva.
   </div>
   <header class="sticky top-0 z-50 glass-nav border-b border-gray-100 bg-white">
@@ -29,8 +34,15 @@
       </div>
       <div class="flex items-center space-x-5">
         <div class="hidden sm:block relative">
-          <input id="search-input" class="bg-gray-100 border-none rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-black w-32 md:w-48" placeholder="Buscar" type="text" onkeydown="handleSearch(event)" />
-          <svg onclick="triggerSearch()" class="w-4 h-4 absolute right-3 top-2 text-gray-400 cursor-pointer hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <input id="search-input"
+            class="bg-gray-100 border-none rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-black w-32 md:w-48"
+            placeholder="Buscar" type="text" onkeydown="handleSearch(event)" />
+          <svg onclick="triggerSearch()"
+            class="w-4 h-4 absolute right-3 top-2 text-gray-400 cursor-pointer hover:text-black transition-colors"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
         </div>
       </div>
     </nav>
@@ -38,7 +50,8 @@
 
   <div class="bg-[#1a1a1a] text-white py-16 md:py-24 text-center">
     <h1 class="text-5xl md:text-7xl font-black italic tracking-widest uppercase text-lime-400">CONTÁCTENOS</h1>
-    <p class="mt-4 text-gray-300 font-bold uppercase tracking-wider max-w-2xl mx-auto px-4">Estamos aquí para ayudarte</p>
+    <p class="mt-4 text-gray-300 font-bold uppercase tracking-wider max-w-2xl mx-auto px-4">Estamos aquí para ayudarte
+    </p>
   </div>
 
   <main class="flex-grow">
@@ -50,7 +63,12 @@
             <div class="space-y-8">
               <div class="flex items-start gap-4">
                 <div class="bg-lime-100 p-3 rounded-full flex-shrink-0">
-                  <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
                 </div>
                 <div>
                   <h3 class="font-black text-lg uppercase mb-1">Dirección</h3>
@@ -59,20 +77,29 @@
               </div>
               <div class="flex items-start gap-4">
                 <div class="bg-green-100 p-3 rounded-full flex-shrink-0">
-                  <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
                 </div>
                 <div>
                   <h3 class="font-black text-lg uppercase mb-1">WhatsApp</h3>
-                  <button onclick="window.open('https://wa.me/?text=Hola,%20quisiera%20información%20sobre%20Golden%20Cloud%20Pod', '_blank')" class="mt-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold px-6 py-2 rounded-full text-sm transition-transform hover:scale-105 shadow-md uppercase tracking-wider">Abrir Chat</button>
+                  <button
+                    onclick="window.open('https://wa.me/595973731548?text=Hola,%20quisiera%20información%20sobre%20Golden%20Cloud%20Pod', '_blank')"
+                    class="mt-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold px-6 py-2 rounded-full text-sm transition-transform hover:scale-105 shadow-md uppercase tracking-wider">Abrir
+                    Chat</button>
                 </div>
               </div>
               <div class="flex items-start gap-4">
                 <div class="bg-lime-100 p-3 rounded-full flex-shrink-0">
-                  <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
                 </div>
                 <div>
                   <h3 class="font-black text-lg uppercase mb-1">Horario</h3>
-                  <p class="text-gray-600 font-medium">Lun-Vie: 8:00 - 18:00</p>
+                  <p class="text-gray-600 font-medium">Lun-Vie: 8:00 - 17:00</p>
                   <p class="text-gray-600 font-medium">Sáb: 8:00 - 12:00</p>
                 </div>
               </div>
@@ -83,15 +110,21 @@
             <form class="space-y-6" onsubmit="handleContactForm(event)">
               <div>
                 <label class="block text-sm font-bold uppercase tracking-wider mb-2" for="contact-name">Nombre</label>
-                <input id="contact-name" type="text" required class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:border-transparent font-medium" placeholder="Tu nombre" />
+                <input id="contact-name" type="text" required
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:border-transparent font-medium"
+                  placeholder="Tu nombre" />
               </div>
               <div>
                 <label class="block text-sm font-bold uppercase tracking-wider mb-2" for="contact-email">Email</label>
-                <input id="contact-email" type="email" required class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:border-transparent font-medium" placeholder="tu@email.com" />
+                <input id="contact-email" type="email" required
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:border-transparent font-medium"
+                  placeholder="tu@email.com" />
               </div>
               <div>
-                <label class="block text-sm font-bold uppercase tracking-wider mb-2" for="contact-subject">Asunto</label>
-                <select id="contact-subject" required class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:border-transparent font-medium">
+                <label class="block text-sm font-bold uppercase tracking-wider mb-2"
+                  for="contact-subject">Asunto</label>
+                <select id="contact-subject" required
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:border-transparent font-medium">
                   <option value="">Seleccionar</option>
                   <option value="consulta">Consulta sobre productos</option>
                   <option value="mayorista">Venta mayorista</option>
@@ -100,10 +133,15 @@
                 </select>
               </div>
               <div>
-                <label class="block text-sm font-bold uppercase tracking-wider mb-2" for="contact-message">Mensaje</label>
-                <textarea id="contact-message" rows="4" required class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:border-transparent font-medium resize-none" placeholder="Escribe tu mensaje..."></textarea>
+                <label class="block text-sm font-bold uppercase tracking-wider mb-2"
+                  for="contact-message">Mensaje</label>
+                <textarea id="contact-message" rows="4" required
+                  class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-black focus:border-transparent font-medium resize-none"
+                  placeholder="Escribe tu mensaje..."></textarea>
               </div>
-              <button type="submit" class="w-full bg-black text-white px-8 py-4 font-black rounded-full uppercase tracking-widest hover:bg-gray-800 transition-colors text-sm">ENVIAR MENSAJE</button>
+              <button type="submit"
+                class="w-full bg-black text-white px-8 py-4 font-black rounded-full uppercase tracking-widest hover:bg-gray-800 transition-colors text-sm">ENVIAR
+                MENSAJE</button>
             </form>
           </div>
         </div>
@@ -114,4 +152,5 @@
   <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2"></div>
   <script src="scripts.js"></script>
 </body>
+
 </html>

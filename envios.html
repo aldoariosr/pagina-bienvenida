@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -8,14 +9,20 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
-  <div class="bg-black text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase border-b border-gray-800">ADVERTENCIA: Este producto contiene nicotina. La nicotina es una sustancia química adictiva.</div>
+  <div
+    class="bg-black text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase border-b border-gray-800">
+    ADVERTENCIA: Este producto contiene nicotina. La nicotina es una sustancia química adictiva.</div>
   <header class="sticky top-0 z-50 glass-nav border-b border-gray-100 bg-white">
     <nav class="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
-      <div class="flex-shrink-0 cursor-pointer" onclick="window.location.href='index.html'"><span class="text-2xl font-black tracking-tighter italic">Golden Cloud Pod</span></div>
+      <div class="flex-shrink-0 cursor-pointer" onclick="window.location.href='index.html'"><span
+          class="text-2xl font-black tracking-tighter italic">Golden Cloud Pod</span></div>
       <div class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
         <a href="index.html" class="hover:text-gray-500 transition-colors cursor-pointer">Inicio</a>
         <a href="tienda.html" class="hover:text-gray-500 transition-colors cursor-pointer">Tienda</a>
@@ -23,12 +30,22 @@
         <a href="mayorista.html" class="hover:text-gray-500 transition-colors cursor-pointer">Venta al por mayor</a>
         <a href="nosotros.html" class="hover:text-gray-500 transition-colors cursor-pointer">Nosotros</a>
       </div>
-      <div class="flex items-center space-x-5"><div class="hidden sm:block relative"><input id="search-input" class="bg-gray-100 border-none rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-black w-32 md:w-48" placeholder="Buscar" type="text" onkeydown="handleSearch(event)" /><svg onclick="triggerSearch()" class="w-4 h-4 absolute right-3 top-2 text-gray-400 cursor-pointer hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div></div>
+      <div class="flex items-center space-x-5">
+        <div class="hidden sm:block relative"><input id="search-input"
+            class="bg-gray-100 border-none rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-black w-32 md:w-48"
+            placeholder="Buscar" type="text" onkeydown="handleSearch(event)" /><svg onclick="triggerSearch()"
+            class="w-4 h-4 absolute right-3 top-2 text-gray-400 cursor-pointer hover:text-black transition-colors"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg></div>
+      </div>
     </nav>
   </header>
 
   <div class="bg-[#1a1a1a] text-white py-16 md:py-24 text-center">
-    <h1 class="text-5xl md:text-7xl font-black italic tracking-widest uppercase text-lime-400">ENVÍOS Y DEVOLUCIONES</h1>
+    <h1 class="text-5xl md:text-7xl font-black italic tracking-widest uppercase text-lime-400">ENVÍOS Y DEVOLUCIONES
+    </h1>
   </div>
 
   <main class="flex-grow">
@@ -37,23 +54,32 @@
         <h2 class="text-3xl font-black italic uppercase tracking-wider mb-6">POLÍTICA DE ENVÍOS</h2>
         <div class="space-y-4 text-gray-600 font-medium mb-12">
           <p><strong class="text-black">Cobertura:</strong> Realizamos envíos a todo el territorio paraguayo.</p>
-          <p><strong class="text-black">Tiempo de entrega:</strong> Ciudad del Este: 24 horas hábiles. Interior del país: 3-5 días hábiles.</p>
-          <p><strong class="text-black">Costo de envío:</strong> El costo varía según la ubicación. Consulte con nuestro equipo de ventas por WhatsApp.</p>
-          <p><strong class="text-black">Seguimiento:</strong> Una vez despachado su pedido, recibirá un código de seguimiento por WhatsApp.</p>
-          <p><strong class="text-black">Envío gratis:</strong> En compras mayores a 500.000 Gs., el envío es totalmente gratuito dentro de Ciudad del Este.</p>
+          <p><strong class="text-black">Tiempo de entrega:</strong> Ciudad del Este: 9 horas hábiles. Interior del país:
+            2-3 días hábiles.</p>
+          <p><strong class="text-black">Costo de envío:</strong> El costo varía según la ubicación. Consulte con nuestro
+            equipo de ventas por WhatsApp.</p>
+          <p><strong class="text-black">Seguimiento:</strong> Una vez despachado su pedido, recibirá un código de
+            seguimiento por WhatsApp.</p>
+          <p><strong class="text-black">Envío gratis:</strong> En compras mayores a 500.000 Gs., el envío es totalmente
+            gratuito dentro de Ciudad del Este.</p>
         </div>
 
         <h2 class="text-3xl font-black italic uppercase tracking-wider mb-6">POLÍTICA DE DEVOLUCIONES</h2>
         <div class="space-y-4 text-gray-600 font-medium mb-12">
-          <p><strong class="text-black">Plazo:</strong> Aceptamos devoluciones dentro de los 7 días posteriores a la recepción del producto.</p>
-          <p><strong class="text-black">Condiciones:</strong> El producto debe estar sin uso, en su empaque original y en perfectas condiciones.</p>
-          <p><strong class="text-black">Productos defectuosos:</strong> Si recibe un producto defectuoso, contáctenos inmediatamente. Realizaremos el cambio sin costo adicional.</p>
-          <p><strong class="text-black">Proceso:</strong> Para iniciar una devolución, contáctenos por WhatsApp con su número de pedido y fotos del producto.</p>
+          <p><strong class="text-black">Plazo:</strong> Aceptamos devoluciones dentro de los 7 días posteriores a la
+            recepción del producto.</p>
+          <p><strong class="text-black">Condiciones:</strong> El producto debe estar sin uso, en su empaque original y
+            en perfectas condiciones.</p>
+          <p><strong class="text-black">Productos defectuosos:</strong> Si recibe un producto defectuoso, contáctenos
+            inmediatamente. Realizaremos el cambio sin costo adicional.</p>
+          <p><strong class="text-black">Proceso:</strong> Para iniciar una devolución, contáctenos por WhatsApp con su
+            número de pedido y fotos del producto.</p>
         </div>
 
         <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center">
           <p class="font-bold uppercase tracking-widest text-sm mb-4">¿Tenés alguna duda sobre tu envío?</p>
-          <a href="contacto.html" class="inline-block bg-black text-white px-10 py-3 font-black rounded-full uppercase tracking-widest hover:bg-gray-800 transition-colors text-sm">CONTÁCTENOS</a>
+          <a href="contacto.html"
+            class="inline-block bg-black text-white px-10 py-3 font-black rounded-full uppercase tracking-widest hover:bg-gray-800 transition-colors text-sm">CONTÁCTENOS</a>
         </div>
       </div>
     </section>
@@ -62,4 +88,5 @@
   <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2"></div>
   <script src="scripts.js"></script>
 </body>
+
 </html>
