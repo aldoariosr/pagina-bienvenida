@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Nosotros - Golden Cloud Pod</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Conoce la historia, misión y valores de Golden Cloud Pod Paraguay. Calidad premium en vapes y pods descartables." />
+
+  <!-- CDN de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Fuentes de Google -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Banner Superior -->
+  <div
+    class="bg-black text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase border-b border-gray-800">
+    ADVERTENCIA: Este producto contiene nicotina. La nicotina es una sustancia química adictiva.
+  </div>
+
+  <!-- Navegación -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-gray-100 bg-white">
+    <nav class="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+      <!-- Logotipo -->
+      <div class="flex-shrink-0 cursor-pointer" onclick="window.location.href='index.html'">
+        <span class="text-2xl font-black tracking-tighter italic">Golden Cloud Pod</span>
+      </div>
+
+      <!-- Menú de Escritorio -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
+        <a href="index.html" class="hover:text-gray-500 transition-colors cursor-pointer">Inicio</a>
+        <a href="tienda.html" class="hover:text-gray-500 transition-colors cursor-pointer">Tienda</a>
+        <a href="donde-comprar.html" class="hover:text-gray-500 transition-colors cursor-pointer">Dónde Comprar</a>
+        <a href="mayorista.html" class="hover:text-gray-500 transition-colors cursor-pointer">Venta al por mayor</a>
+        <a href="nosotros.html" class="text-black transition-colors cursor-pointer">Nosotros</a>
+      </div>
+
+      <!-- Iconos -->
+      <div class="flex items-center space-x-5">
+        <div class="hidden sm:block relative">
+          <input id="search-input"
+            class="bg-gray-100 border-none rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-black w-32 md:w-48"
+            placeholder="Buscar" type="text" onkeydown="handleSearch(event)" />
+          <svg onclick="triggerSearch()" class="w-4 h-4 absolute right-3 top-2 text-gray-400 cursor-pointer hover:text-black transition-colors" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Banner Principal -->
+  <div class="bg-[#1a1a1a] text-white py-16 md:py-24 text-center">
+    <h1 class="text-5xl md:text-7xl font-black italic tracking-widest uppercase text-lime-400">NOSOTROS</h1>
+    <p class="mt-4 text-gray-300 font-bold uppercase tracking-wider max-w-2xl mx-auto px-4">Conoce la historia detrás de Golden Cloud Pod</p>
+  </div>
+
+  <!-- Contenido Principal -->
+  <main class="flex-grow">
+
+    <!-- Misión y Visión -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <!-- Nuestra Historia -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-lime-100 p-3 rounded-full">
+                <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <h2 class="text-3xl font-black italic uppercase tracking-wider">Nuestra Historia</h2>
+            </div>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Golden Cloud Pod nació en Ciudad del Este, Paraguay, con la visión de traer al mercado latinoamericano los mejores dispositivos de vapeo premium del mundo. Desde nuestros inicios, nos hemos comprometido con ofrecer productos de la más alta calidad.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Con años de experiencia en la industria, nos hemos consolidado como distribuidores autorizados, garantizando la autenticidad de cada producto que llega a tus manos.
+            </p>
+          </div>
+
+          <!-- Nuestra Misión -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-lime-100 p-3 rounded-full">
+                <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <h2 class="text-3xl font-black italic uppercase tracking-wider">Nuestra Misión</h2>
+            </div>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Ofrecer a nuestros clientes una experiencia de vapeo inigualable, combinando sabores innovadores con tecnología de punta en cada dispositivo.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Nos esforzamos por mantener los más altos estándares de calidad, seguridad y servicio al cliente, siendo siempre transparentes y responsables.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-black italic uppercase tracking-wider mb-4">NUESTROS VALORES</h2>
+          <p class="text-gray-600 font-bold uppercase tracking-widest">Lo que nos define como empresa</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Valor 1 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform transition-transform">
+            <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="text-xl font-black uppercase mb-3">Autenticidad</h3>
+            <p class="text-gray-500 font-medium text-sm">100% de nuestros productos son originales y verificables mediante código QR. No vendemos imitaciones.</p>
+          </div>
+
+          <!-- Valor 2 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform transition-transform">
+            <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-black uppercase mb-3">Comunidad</h3>
+            <p class="text-gray-500 font-medium text-sm">Construimos relaciones de confianza con nuestros clientes. Tu satisfacción es nuestra prioridad #1.</p>
+          </div>
+
+          <!-- Valor 3 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform transition-transform">
+            <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+            </div>
+            <h3 class="text-xl font-black uppercase mb-3">Innovación</h3>
+            <p class="text-gray-500 font-medium text-sm">Siempre a la vanguardia con los últimos modelos y sabores que marcan tendencia en el mercado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipo / Estadísticas -->
+    <section class="py-20 bg-[#1a1a1a] text-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-black italic uppercase tracking-wider mb-4 text-lime-400">EN NÚMEROS</h2>
+          <p class="text-gray-400 font-bold uppercase tracking-widest">Lo que hemos logrado juntos</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-5xl md:text-6xl font-black italic text-lime-400 mb-2">4</div>
+            <p class="text-sm font-bold uppercase tracking-widest text-gray-400">Líneas de Productos</p>
+          </div>
+          <div>
+            <div class="text-5xl md:text-6xl font-black italic text-lime-400 mb-2">30+</div>
+            <p class="text-sm font-bold uppercase tracking-widest text-gray-400">Sabores Disponibles</p>
+          </div>
+          <div>
+            <div class="text-5xl md:text-6xl font-black italic text-lime-400 mb-2">500+</div>
+            <p class="text-sm font-bold uppercase tracking-widest text-gray-400">Clientes Satisfechos</p>
+          </div>
+          <div>
+            <div class="text-5xl md:text-6xl font-black italic text-lime-400 mb-2">100%</div>
+            <p class="text-sm font-bold uppercase tracking-widest text-gray-400">Productos Originales</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-[#4fbcc5]">
+      <div class="container mx-auto px-4 text-center">
+        <h3 class="text-white text-3xl md:text-4xl font-black italic uppercase mb-4">¿LISTO PARA PROBAR?</h3>
+        <p class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Explora nuestro catálogo completo y encuentra tu sabor ideal.</p>
+        <a href="tienda.html"
+          class="inline-block bg-black text-white px-12 py-4 font-black rounded-full uppercase tracking-widest hover:bg-gray-800 transition-colors text-sm">IR
+          A LA TIENDA</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de Página -->
+  <footer id="site-footer" class="bg-white pt-20 pb-8 border-t border-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="col-span-1">
+          <div class="text-3xl font-black italic mb-6">Golden Cloud Pod</div>
+          <p class="text-sm font-bold mb-4 uppercase">GOLDEN CLOUD POD S.A.</p>
+          <address class="text-xs text-gray-500 not-italic space-y-1">
+            Km 8 Acaray<br />
+            Ciudad del Este, Paraguay<br />
+          </address>
+        </div>
+
+        <div>
+          <h4 class="font-black mb-6 uppercase tracking-widest border-b border-black pb-2 inline-block">VAPEADOR</h4>
+          <ul class="text-xs font-bold uppercase space-y-3">
+            <li><a class="hover:underline cursor-pointer" href="tienda.html">PLUMAS VAPE</a></li>
+            <li><a class="hover:underline cursor-pointer" href="tienda.html">PAQUETES VAPE</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-black mb-6 uppercase tracking-widest border-b border-black pb-2 inline-block">SERVICIO AL CLIENTE</h4>
+          <ul class="text-xs font-bold uppercase space-y-3">
+            <li><a class="hover:underline cursor-pointer" href="envios.html">ENVÍOS Y DEVOLUCIONES</a></li>
+            <li><a class="hover:underline cursor-pointer" href="privacidad.html">POLÍTICA DE PRIVACIDAD</a></li>
+            <li><a class="hover:underline cursor-pointer" href="terminos.html">TÉRMINOS Y CONDICIONES</a></li>
+            <li><a class="hover:underline cursor-pointer" href="contacto.html">CONTÁCTENOS</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex space-x-6 mb-8">
+            <a class="text-black hover:text-gray-500 transition-colors cursor-pointer" aria-label="Facebook">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+              </svg>
+            </a>
+            <a class="text-black hover:text-gray-500 transition-colors cursor-pointer" aria-label="X (Twitter)">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path>
+              </svg>
+            </a>
+            <a class="text-black hover:text-gray-500 transition-colors cursor-pointer" aria-label="Instagram">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                </path>
+              </svg>
+            </a>
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold italic">18+</div>
+            <span class="text-xs font-bold uppercase">Solo Adultos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-100 pt-8 text-[10px] text-gray-400 leading-relaxed text-center px-4">
+        ADVERTENCIA: Los cigarrillos electrónicos y los productos de e-líquido pueden contener nicotina. Estos productos no son productos para dejar de fumar y no han sido probados como tales. Mantener fuera del alcance de niños y mascotas.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contenedor de Notificaciones -->
+  <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2"></div>
+
+  <!-- Lógica de scripts para interactividad -->
+  <script src="scripts.js"></script>
+</body>
+
+</html>

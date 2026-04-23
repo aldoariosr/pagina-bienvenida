@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Política de Privacidad - Golden Cloud Pod</title>
+  <meta name="description" content="Política de privacidad de Golden Cloud Pod Paraguay." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+  <div class="bg-black text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase border-b border-gray-800">ADVERTENCIA: Este producto contiene nicotina. La nicotina es una sustancia química adictiva.</div>
+  <header class="sticky top-0 z-50 glass-nav border-b border-gray-100 bg-white">
+    <nav class="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+      <div class="flex-shrink-0 cursor-pointer" onclick="window.location.href='index.html'"><span class="text-2xl font-black tracking-tighter italic">Golden Cloud Pod</span></div>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
+        <a href="index.html" class="hover:text-gray-500 transition-colors cursor-pointer">Inicio</a>
+        <a href="tienda.html" class="hover:text-gray-500 transition-colors cursor-pointer">Tienda</a>
+        <a href="donde-comprar.html" class="hover:text-gray-500 transition-colors cursor-pointer">Dónde Comprar</a>
+        <a href="mayorista.html" class="hover:text-gray-500 transition-colors cursor-pointer">Venta al por mayor</a>
+        <a href="nosotros.html" class="hover:text-gray-500 transition-colors cursor-pointer">Nosotros</a>
+      </div>
+      <div class="flex items-center space-x-5"><div class="hidden sm:block relative"><input id="search-input" class="bg-gray-100 border-none rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-black w-32 md:w-48" placeholder="Buscar" type="text" onkeydown="handleSearch(event)" /><svg onclick="triggerSearch()" class="w-4 h-4 absolute right-3 top-2 text-gray-400 cursor-pointer hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div></div>
+    </nav>
+  </header>
+
+  <div class="bg-[#1a1a1a] text-white py-16 md:py-24 text-center">
+    <h1 class="text-5xl md:text-7xl font-black italic tracking-widest uppercase text-lime-400">PRIVACIDAD</h1>
+  </div>
+
+  <main class="flex-grow">
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <p class="text-gray-500 font-medium text-sm mb-10 uppercase tracking-wider">Última actualización: Abril 2026</p>
+
+        <div class="space-y-10">
+          <div>
+            <h2 class="text-2xl font-black italic uppercase tracking-wider mb-4">1. Información que Recopilamos</h2>
+            <p class="text-gray-600 font-medium leading-relaxed">Recopilamos información personal que usted nos proporciona voluntariamente, como nombre, número de WhatsApp, correo electrónico y dirección de entrega al realizar consultas o pedidos.</p>
+          </div>
+          <div>
+            <h2 class="text-2xl font-black italic uppercase tracking-wider mb-4">2. Uso de la Información</h2>
+            <p class="text-gray-600 font-medium leading-relaxed">Utilizamos su información para: procesar pedidos, responder consultas, enviar actualizaciones sobre productos y mejorar nuestro servicio. No vendemos ni compartimos su información con terceros.</p>
+          </div>
+          <div>
+            <h2 class="text-2xl font-black italic uppercase tracking-wider mb-4">3. Protección de Datos</h2>
+            <p class="text-gray-600 font-medium leading-relaxed">Implementamos medidas de seguridad adecuadas para proteger su información personal contra acceso no autorizado, alteración o destrucción.</p>
+          </div>
+          <div>
+            <h2 class="text-2xl font-black italic uppercase tracking-wider mb-4">4. Cookies</h2>
+            <p class="text-gray-600 font-medium leading-relaxed">Nuestro sitio web puede utilizar cookies para mejorar la experiencia del usuario, como recordar la verificación de edad. Puede desactivar las cookies en la configuración de su navegador.</p>
+          </div>
+          <div>
+            <h2 class="text-2xl font-black italic uppercase tracking-wider mb-4">5. Contacto</h2>
+            <p class="text-gray-600 font-medium leading-relaxed">Si tiene preguntas sobre nuestra política de privacidad, puede contactarnos a través de nuestra <a href="contacto.html" class="text-black font-bold underline hover:text-gray-500">página de contacto</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2"></div>
+  <script src="scripts.js"></script>
+</body>
+</html>

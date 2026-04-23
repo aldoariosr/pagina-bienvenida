@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Venta al por Mayor - Golden Cloud Pod</title>
+  <meta name="description" content="Programa de venta mayorista Golden Cloud Pod. Conviértete en distribuidor autorizado en Paraguay." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+  <div class="bg-black text-white py-2 text-center text-[10px] md:text-xs font-bold tracking-widest uppercase border-b border-gray-800">
+    ADVERTENCIA: Este producto contiene nicotina. La nicotina es una sustancia química adictiva.
+  </div>
+  <header class="sticky top-0 z-50 glass-nav border-b border-gray-100 bg-white">
+    <nav class="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+      <div class="flex-shrink-0 cursor-pointer" onclick="window.location.href='index.html'">
+        <span class="text-2xl font-black tracking-tighter italic">Golden Cloud Pod</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider">
+        <a href="index.html" class="hover:text-gray-500 transition-colors cursor-pointer">Inicio</a>
+        <a href="tienda.html" class="hover:text-gray-500 transition-colors cursor-pointer">Tienda</a>
+        <a href="donde-comprar.html" class="hover:text-gray-500 transition-colors cursor-pointer">Dónde Comprar</a>
+        <a href="mayorista.html" class="text-black transition-colors cursor-pointer">Venta al por mayor</a>
+        <a href="nosotros.html" class="hover:text-gray-500 transition-colors cursor-pointer">Nosotros</a>
+      </div>
+      <div class="flex items-center space-x-5">
+        <div class="hidden sm:block relative">
+          <input id="search-input" class="bg-gray-100 border-none rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-black w-32 md:w-48" placeholder="Buscar" type="text" onkeydown="handleSearch(event)" />
+          <svg onclick="triggerSearch()" class="w-4 h-4 absolute right-3 top-2 text-gray-400 cursor-pointer hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="bg-[#1a1a1a] text-white py-16 md:py-24 text-center">
+    <h1 class="text-5xl md:text-7xl font-black italic tracking-widest uppercase text-lime-400">VENTA MAYORISTA</h1>
+    <p class="mt-4 text-gray-300 font-bold uppercase tracking-wider max-w-2xl mx-auto px-4">Conviértete en distribuidor autorizado de Golden Cloud Pod</p>
+  </div>
+
+  <main class="flex-grow">
+    <!-- Beneficios -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-black italic uppercase tracking-wider mb-4">¿POR QUÉ SER DISTRIBUIDOR?</h2>
+          <p class="text-gray-600 font-bold uppercase tracking-widest">Beneficios exclusivos para nuestros socios comerciales</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-black uppercase mb-3">Precios Especiales</h3>
+            <p class="text-gray-500 font-medium text-sm">Descuentos de hasta 40% en compras por volumen. Márgenes de ganancia atractivos.</p>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+            </div>
+            <h3 class="text-xl font-black uppercase mb-3">Stock Garantizado</h3>
+            <p class="text-gray-500 font-medium text-sm">Acceso prioritario a nuevos lanzamientos y stock garantizado en todos los sabores.</p>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div class="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-black uppercase mb-3">Soporte Dedicado</h3>
+            <p class="text-gray-500 font-medium text-sm">Asesor de ventas dedicado, material de marketing y capacitación sobre productos.</p>
+          </div>
+        </div>
+
+        <!-- Formulario Mayorista -->
+        <div class="bg-[#1a1a1a] text-white p-10 md:p-16 rounded-3xl">
+          <h2 class="text-3xl font-black italic uppercase tracking-wider mb-4 text-lime-400 text-center">SOLICITAR INFORMACIÓN</h2>
+          <p class="text-gray-400 font-bold uppercase tracking-widest text-sm text-center mb-10">Completa el formulario y te contactaremos en 24 horas</p>
+          <form class="max-w-2xl mx-auto space-y-6" onsubmit="handleWholesaleForm(event)">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-bold uppercase tracking-wider mb-2 text-gray-300">Nombre / Empresa</label>
+                <input type="text" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white font-medium focus:ring-2 focus:ring-lime-400 focus:border-transparent placeholder-gray-500" placeholder="Tu nombre o empresa" />
+              </div>
+              <div>
+                <label class="block text-sm font-bold uppercase tracking-wider mb-2 text-gray-300">WhatsApp</label>
+                <input type="tel" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white font-medium focus:ring-2 focus:ring-lime-400 focus:border-transparent placeholder-gray-500" placeholder="+595 ..." />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-bold uppercase tracking-wider mb-2 text-gray-300">Ciudad</label>
+              <input type="text" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white font-medium focus:ring-2 focus:ring-lime-400 focus:border-transparent placeholder-gray-500" placeholder="Tu ciudad" />
+            </div>
+            <div>
+              <label class="block text-sm font-bold uppercase tracking-wider mb-2 text-gray-300">¿Ya tenés un negocio?</label>
+              <select required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white font-medium focus:ring-2 focus:ring-lime-400 focus:border-transparent">
+                <option value="" class="text-black">Seleccionar</option>
+                <option value="si" class="text-black">Sí, tengo local comercial</option>
+                <option value="online" class="text-black">Sí, vendo online</option>
+                <option value="no" class="text-black">No, quiero empezar</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-bold uppercase tracking-wider mb-2 text-gray-300">Mensaje (Opcional)</label>
+              <textarea rows="3" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white font-medium focus:ring-2 focus:ring-lime-400 focus:border-transparent resize-none placeholder-gray-500" placeholder="Cuéntanos más sobre tu interés..."></textarea>
+            </div>
+            <button type="submit" class="w-full bg-lime-400 text-black px-8 py-4 font-black rounded-full uppercase tracking-widest hover:bg-lime-300 transition-colors text-sm">ENVIAR SOLICITUD</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2"></div>
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -193,3 +193,21 @@ window.addEventListener('click', (e) => {
     closeProductModal();
   }
 });
+
+// ============================================
+// FORMULARIOS DE CONTACTO Y MAYORISTA
+// ============================================
+
+function handleContactForm(e) {
+  e.preventDefault();
+  const name = document.getElementById('contact-name')?.value || '';
+  const email = document.getElementById('contact-email')?.value || '';
+  showNotification(`¡Gracias ${name}! Tu mensaje fue enviado correctamente. Te responderemos a ${email} a la brevedad.`);
+  e.target.reset();
+}
+
+function handleWholesaleForm(e) {
+  e.preventDefault();
+  showNotification('¡Solicitud mayorista enviada! Nuestro equipo comercial te contactará en las próximas 24 horas.');
+  e.target.reset();
+}
